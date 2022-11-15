@@ -1,0 +1,7 @@
+<module name="hokvalidator">
+    <InFlow>
+        <handler name="HOKValidationHandler" class="org.example.cnf.handler.HOKValidationHandler">
+            <order phase="Dispatch" />
+        </handler>
+    </InFlow>
+</module>
