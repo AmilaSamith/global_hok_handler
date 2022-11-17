@@ -21,8 +21,9 @@ public class HOKValidationHandler extends AbstractHandler {
         String apiPath = (String) messageContext.getProperty("REST_URL_POSTFIX");
 
         // Skip  HOK validation for DCR API calls
-        if (apiPath.toLowerCase().contains("/register")) {
+        if (apiPath != null && apiPath.toLowerCase().contains("/register")) {
            messageContext.setProperty(DISABLE_CNF_VALIDATION, Boolean.TRUE);
+           log.debug("DCR Flow set to skip HOK validation.");
         }
 
         return InvocationResponse.CONTINUE;
